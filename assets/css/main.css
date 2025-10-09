@@ -110,6 +110,39 @@
   box-shadow: 0 10px 30px rgba(0, 108, 135, 0.2);
 }
 
+/* AIBizs Logo Styling */
+.header .logo .sitename {
+  background: var(--aibizs-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.header .logo:hover .sitename {
+  transform: scale(1.05);
+}
+
+/* Video Styling for Call-to-Action */
+.call-to-action video {
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.call-to-action video:hover {
+  transform: scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Ensure video maintains aspect ratio */
+.call-to-action .content-right {
+  position: relative;
+  overflow: hidden;
+}
+
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
