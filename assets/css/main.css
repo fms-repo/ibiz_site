@@ -802,6 +802,7 @@ h6 {
   padding: 160px 0 80px 0;
   text-align: center;
   position: relative;
+  z-index: 1;
 }
 
 .page-title::after {
@@ -819,6 +820,8 @@ h6 {
   font-size: 42px;
   font-weight: 700;
   margin-bottom: 10px;
+  position: relative;
+  z-index: 2;
 }
 
 .page-title .breadcrumbs ol {
@@ -830,6 +833,8 @@ h6 {
   margin: 0;
   font-size: 16px;
   font-weight: 400;
+  position: relative;
+  z-index: 2;
 }
 
 .page-title .breadcrumbs ol li+li {
@@ -841,6 +846,26 @@ h6 {
   display: inline-block;
   padding-right: 10px;
   color: color-mix(in srgb, var(--default-color), transparent 50%);
+}
+
+.page-title .breadcrumbs ol li a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.page-title .breadcrumbs ol li a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.page-title .breadcrumbs ol li.current {
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+}
+
+.page-title .container {
+  position: relative;
+  z-index: 2;
 }
 
 /*--------------------------------------------------------------
