@@ -868,6 +868,24 @@ h6 {
   z-index: 2;
 }
 
+/* Client Icon Styling for Testimonials */
+.client-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--aibizs-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.client-icon i {
+  font-size: 24px;
+  color: #ffffff;
+}
+
 /*--------------------------------------------------------------
 # Global Sections
 --------------------------------------------------------------*/
