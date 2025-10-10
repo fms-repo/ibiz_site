@@ -143,6 +143,56 @@
   overflow: hidden;
 }
 
+/* Client Success Stories Text Area with Background Image */
+.about .testimonial-section .testimonial-intro {
+  background-image: url('../img/aibiz_image2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 40px 30px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.about .testimonial-section .testimonial-intro::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(3, 17, 25, 0.75); /* Dark overlay for text readability */
+  border-radius: 15px;
+  z-index: 1;
+}
+
+.about .testimonial-section .testimonial-intro h3,
+.about .testimonial-section .testimonial-intro p {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.about .testimonial-section .testimonial-intro .swiper-nav-buttons {
+  position: relative;
+  z-index: 2;
+}
+
+.about .testimonial-section .testimonial-intro .swiper-nav-buttons button {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.about .testimonial-section .testimonial-intro .swiper-nav-buttons button:hover {
+  background: var(--aibizs-gradient);
+  border-color: var(--aibizs-secondary);
+  transform: scale(1.05);
+}
+
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
