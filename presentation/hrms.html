@@ -127,9 +127,17 @@
   <!-- Initialize AOS -->
   <script>
     AOS.init({
-      duration: 800,
+      duration: 0,
       easing: 'ease-in-out',
-      once: true
+      once: true,
+      offset: -1000,
+      disable: false
+    });
+    // Force all elements to be visible immediately
+    document.querySelectorAll('[data-aos]').forEach(el => {
+      el.classList.add('aos-animate');
+      el.style.opacity = '1';
+      el.style.transform = 'none';
     });
   </script>
 

@@ -31,6 +31,20 @@ html {
   overflow-y: scroll; /* Always show scrollbar */
 }
 
+/* Make all AOS elements visible immediately on page load */
+body.presentation-body [data-aos] {
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+/* Ensure AOS animated elements are visible */
+body.presentation-body [data-aos].aos-animate {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
 /* Slide Navigation */
 .slide-nav {
   position: fixed;
