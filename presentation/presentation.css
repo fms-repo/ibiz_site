@@ -31,18 +31,29 @@ html {
   overflow-y: scroll; /* Always show scrollbar */
 }
 
-/* Make all AOS elements visible immediately on page load */
-body.presentation-body [data-aos] {
-  visibility: visible !important;
-  opacity: 1 !important;
-  transform: none !important;
-  transition: none !important;
+/* PowerPoint-like drop animation from top to bottom */
+@keyframes dropFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Ensure AOS animated elements are visible */
+/* Initial state - hidden above */
+body.presentation-body [data-aos] {
+  opacity: 0;
+  transform: translateY(-40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Animated state - visible with drop animation */
 body.presentation-body [data-aos].aos-animate {
-  opacity: 1 !important;
-  transform: none !important;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Slide Navigation */

@@ -96,19 +96,39 @@
 
   <!-- Initialize AOS -->
   <script>
+    // Sequential drop animation from top to bottom
+    function animateElementsSequentially() {
+      const elements = Array.from(document.querySelectorAll('[data-aos]'));
+      
+      // Sort elements by their position from top to bottom
+      elements.sort((a, b) => {
+        const rectA = a.getBoundingClientRect();
+        const rectB = b.getBoundingClientRect();
+        return rectA.top - rectB.top;
+      });
+      
+      // Animate each element with a delay
+      elements.forEach((el, index) => {
+        setTimeout(() => {
+          el.classList.add('aos-animate');
+        }, index * 100); // 100ms delay between each element
+      });
+    }
+    
+    // Initialize AOS but disable it, we'll use our own animation
     AOS.init({
       duration: 0,
       easing: 'ease-in-out',
       once: true,
-      offset: -1000,
-      disable: false
+      disable: true
     });
-    // Force all elements to be visible immediately
-    document.querySelectorAll('[data-aos]').forEach(el => {
-      el.classList.add('aos-animate');
-      el.style.opacity = '1';
-      el.style.transform = 'none';
-    });
+    
+    // Start sequential animation after page load
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', animateElementsSequentially);
+    } else {
+      setTimeout(animateElementsSequentially, 100);
+    }
   </script>
 
 </body>
