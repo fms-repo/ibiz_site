@@ -340,8 +340,8 @@
   font-size: 1.5rem;
 }
 
-/* Flow Arrows Container */
-.flow-arrows-container {
+/* SVG Flow Arrows */
+.flow-arrows-svg {
   position: absolute;
   top: 0;
   left: 0;
@@ -352,203 +352,45 @@
   overflow: visible;
 }
 
-/* Flow Arrow Lines */
-.flow-arrow-line {
-  position: absolute;
-  background: var(--accent-color);
+.flow-path {
+  fill: none;
+  stroke-width: 4;
   opacity: 0;
+  filter: drop-shadow(0 0 6px rgba(0, 156, 220, 0.8));
   transition: opacity 0.3s ease;
-  box-shadow: 0 0 8px rgba(0, 156, 220, 0.6);
 }
 
-.flow-arrow-line.active {
+.flow-path.active {
   opacity: 1;
-  animation: arrowFlow 2s ease-in-out infinite;
+  animation: pathFlow 2s ease-in-out infinite;
 }
 
-.flow-arrow-line.failover {
-  background: #ff6b6b;
-  box-shadow: 0 0 8px rgba(255, 107, 107, 0.6);
+.flow-path.failover {
+  stroke: #ff6b6b;
+  filter: drop-shadow(0 0 6px rgba(255, 107, 107, 0.8));
+  opacity: 0.7;
 }
 
-.arrow-head {
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-left: 8px solid var(--accent-color);
-  border-top: 6px solid transparent;
-  border-bottom: 6px solid transparent;
-  right: -8px;
-  top: 50%;
-  transform: translateY(-50%);
-  filter: drop-shadow(0 0 4px rgba(0, 156, 220, 0.8));
+.flow-path.failover.active {
+  opacity: 1;
+  animation: pathFlow 1.5s ease-in-out infinite;
 }
 
-.flow-arrow-line.failover .arrow-head {
-  border-left-color: #ff6b6b;
-  filter: drop-shadow(0 0 4px rgba(255, 107, 107, 0.8));
-}
-
-@keyframes arrowFlow {
+@keyframes pathFlow {
   0% {
+    stroke-dasharray: 0, 1000;
     opacity: 0;
-    transform: scaleX(0);
   }
-  20% {
+  15% {
     opacity: 1;
-    transform: scaleX(1);
   }
-  80% {
+  85% {
     opacity: 1;
-    transform: scaleX(1);
   }
   100% {
+    stroke-dasharray: 1000, 1000;
     opacity: 0;
-    transform: scaleX(1);
   }
-}
-
-/* User to CloudFront - Diagonal from center top to right frontend */
-.arrow-user-cloudfront {
-  top: 120px;
-  left: 50%;
-  width: 200px;
-  height: 3px;
-  transform: rotate(-30deg);
-  transform-origin: left center;
-}
-
-/* CloudFront to S3 - Vertical down */
-.arrow-cloudfront-s3 {
-  top: 280px;
-  right: 160px;
-  width: 80px;
-  height: 3px;
-  transform: rotate(90deg);
-  transform-origin: top center;
-}
-
-/* User to ALB - Diagonal from center top to backend */
-.arrow-user-alb {
-  top: 120px;
-  left: 30%;
-  width: 250px;
-  height: 3px;
-  transform: rotate(30deg);
-  transform-origin: left center;
-}
-
-/* ALB to IGW - Vertical up */
-.arrow-alb-igw {
-  top: 200px;
-  right: 140px;
-  width: 60px;
-  height: 3px;
-  transform: rotate(90deg);
-  transform-origin: top center;
-}
-
-/* ALB to Public Subnets - Vertical down to each subnet */
-.arrow-alb-subnet1 {
-  top: 280px;
-  left: 25%;
-  width: 100px;
-  height: 3px;
-  transform: rotate(90deg);
-  transform-origin: top center;
-}
-
-.arrow-alb-subnet2 {
-  top: 280px;
-  left: 40%;
-  width: 100px;
-  height: 3px;
-  transform: rotate(90deg);
-  transform-origin: top center;
-}
-
-.arrow-alb-subnet3 {
-  top: 280px;
-  left: 55%;
-  width: 100px;
-  height: 3px;
-  transform: rotate(90deg);
-  transform-origin: top center;
-}
-
-/* Public to Private Subnets - Vertical down */
-.arrow-public-private1 {
-  top: 380px;
-  left: 25%;
-  width: 80px;
-  height: 3px;
-  transform: rotate(90deg);
-  transform-origin: top center;
-}
-
-.arrow-public-private2 {
-  top: 380px;
-  left: 40%;
-  width: 80px;
-  height: 3px;
-  transform: rotate(90deg);
-  transform-origin: top center;
-}
-
-.arrow-public-private3 {
-  top: 380px;
-  left: 55%;
-  width: 80px;
-  height: 3px;
-  transform: rotate(90deg);
-  transform-origin: top center;
-}
-
-/* Private Subnets to RDS - Vertical down */
-.arrow-private-rds1 {
-  top: 500px;
-  left: 25%;
-  width: 100px;
-  height: 3px;
-  transform: rotate(90deg);
-  transform-origin: top center;
-}
-
-.arrow-private-rds2 {
-  top: 500px;
-  left: 40%;
-  width: 100px;
-  height: 3px;
-  transform: rotate(90deg);
-  transform-origin: top center;
-}
-
-.arrow-private-rds3 {
-  top: 500px;
-  left: 55%;
-  width: 100px;
-  height: 3px;
-  transform: rotate(90deg);
-  transform-origin: top center;
-}
-
-/* RDS Failover - Horizontal */
-.arrow-rds-failover1 {
-  bottom: 120px;
-  left: 32%;
-  width: 80px;
-  height: 3px;
-  transform: rotate(0deg);
-  transform-origin: left center;
-}
-
-.arrow-rds-failover2 {
-  bottom: 120px;
-  left: 47%;
-  width: 80px;
-  height: 3px;
-  transform: rotate(0deg);
-  transform-origin: left center;
 }
 
 /* Legend */
