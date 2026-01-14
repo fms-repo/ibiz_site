@@ -470,6 +470,23 @@ body.presentation-body [data-aos].aos-animate {
   scroll-margin-top: 100px;
 }
 
+.section-title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid var(--primary-color);
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.section-title-wrapper .section-title {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
 .section-title {
   font-family: "Nunito Sans", sans-serif;
   font-size: 2.2rem;
@@ -480,6 +497,32 @@ body.presentation-body [data-aos].aos-animate {
   display: flex;
   align-items: center;
   gap: 15px;
+}
+
+.download-brochure-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: var(--aibizs-gradient);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 156, 220, 0.3);
+}
+
+.download-brochure-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 156, 220, 0.5);
+  color: white;
+  text-decoration: none;
+}
+
+.download-brochure-btn i {
+  font-size: 1.1rem;
 }
 
 .section-title i {
