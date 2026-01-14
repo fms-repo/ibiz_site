@@ -499,10 +499,17 @@ body.presentation-body [data-aos].aos-animate {
   border-radius: 15px;
   padding: 20px 25px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 15px;
   transition: all 0.3s ease;
   border-left: 4px solid transparent;
+}
+
+.module-item .module-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
 }
 
 .module-item:hover {
@@ -545,6 +552,15 @@ body.presentation-body [data-aos].aos-animate {
   font-size: 1.1rem;
   color: var(--default-color);
   font-weight: 500;
+  display: block;
+}
+
+.module-item small {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 400;
+  line-height: 1.4;
+  display: block;
 }
 
 /* Features Section */
