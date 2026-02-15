@@ -193,10 +193,11 @@
       <button class="video-modal-close" onclick="closeVideoModal()" aria-label="Close">
         <i class="bi bi-x-lg"></i>
       </button>
-      <video id="introVideo" controls>
-        <source src="ConvergeX_Intro.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <iframe id="introVideo" 
+              src="https://drive.google.com/file/d/1gmgS0krCK21GqhUuYFro_-doqJUpc_pI/preview" 
+              allow="autoplay" 
+              allowfullscreen>
+      </iframe>
     </div>
   </div>
 
@@ -243,30 +244,28 @@
     // Video Modal Functions
     function openVideoModal() {
       const modal = document.getElementById('videoModal');
-      const video = document.getElementById('introVideo');
       modal.style.display = 'flex';
       document.body.style.overflow = 'hidden'; // Prevent background scrolling
-      video.play();
     }
 
     function closeVideoModal(event) {
       const modal = document.getElementById('videoModal');
-      const video = document.getElementById('introVideo');
+      const iframe = document.getElementById('introVideo');
       
       // If event is provided, check if click was on backdrop (not on content)
       if (event) {
         if (event.target.id === 'videoModal' || event.target.classList.contains('video-modal-close') || event.target.closest('.video-modal-close')) {
           modal.style.display = 'none';
           document.body.style.overflow = 'auto';
-          video.pause();
-          video.currentTime = 0;
+          // Reset iframe source to stop video playback
+          iframe.src = iframe.src;
         }
       } else {
         // Called directly (e.g., from Escape key or close button)
         modal.style.display = 'none';
         document.body.style.overflow = 'auto';
-        video.pause();
-        video.currentTime = 0;
+        // Reset iframe source to stop video playback
+        iframe.src = iframe.src;
       }
     }
 
