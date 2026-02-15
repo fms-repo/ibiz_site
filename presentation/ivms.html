@@ -52,9 +52,14 @@
             <h2 class="section-title">
               <i class="bi bi-grid-3x3-gap"></i> Features
             </h2>
-            <a href="ivms.pdf" target="_blank" class="download-brochure-btn" data-aos="fade-left" data-aos-delay="400">
-              <i class="bi bi-download"></i> Download Brochure
-            </a>
+            <div class="action-buttons" data-aos="fade-left" data-aos-delay="400">
+              <button type="button" class="play-video-btn" onclick="openVideoModal()">
+                <i class="bi bi-play-circle"></i> Play Video
+              </button>
+              <a href="ivms.pdf" target="_blank" class="download-brochure-btn">
+                <i class="bi bi-download"></i> Download Brochure
+              </a>
+            </div>
           </div>
           <div class="modules-grid">
             <div class="module-item" data-aos="fade-up" data-aos-delay="100">
@@ -182,6 +187,19 @@
     </div>
   </div>
 
+  <!-- Video Modal -->
+  <div id="videoModal" class="video-modal" onclick="closeVideoModal(event)">
+    <div class="video-modal-content" onclick="event.stopPropagation()">
+      <button class="video-modal-close" onclick="closeVideoModal()" aria-label="Close">
+        <i class="bi bi-x-lg"></i>
+      </button>
+      <video id="introVideo" controls>
+        <source src="ConvergeX_Intro.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
   <!-- Vendor JS Files -->
   <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../assets/vendor/aos/aos.js"></script>
@@ -221,6 +239,46 @@
     } else {
       setTimeout(animateElementsSequentially, 100);
     }
+
+    // Video Modal Functions
+    function openVideoModal() {
+      const modal = document.getElementById('videoModal');
+      const video = document.getElementById('introVideo');
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+      video.play();
+    }
+
+    function closeVideoModal(event) {
+      const modal = document.getElementById('videoModal');
+      const video = document.getElementById('introVideo');
+      
+      // If event is provided, check if click was on backdrop (not on content)
+      if (event) {
+        if (event.target.id === 'videoModal' || event.target.classList.contains('video-modal-close') || event.target.closest('.video-modal-close')) {
+          modal.style.display = 'none';
+          document.body.style.overflow = 'auto';
+          video.pause();
+          video.currentTime = 0;
+        }
+      } else {
+        // Called directly (e.g., from Escape key or close button)
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        video.pause();
+        video.currentTime = 0;
+      }
+    }
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        const modal = document.getElementById('videoModal');
+        if (modal.style.display === 'flex') {
+          closeVideoModal();
+        }
+      }
+    });
   </script>
 
 </body>
