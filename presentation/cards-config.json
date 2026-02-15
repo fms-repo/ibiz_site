@@ -69,6 +69,16 @@
       "description": "Intelligent AI Agent Platform",
       "sortOrder": 7,
       "visible": true
+    },
+    {
+      "id": "e-invoicing",
+      "name": "e-Invoicing",
+      "href": "e-invoicing.html",
+      "icon": "bi-receipt",
+      "title": "e-Invoicing",
+      "description": "PEPPOL Standard Compliant Electronic Invoicing",
+      "sortOrder": 8,
+      "visible": true
     }
   ]
 }

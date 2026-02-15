@@ -5,27 +5,50 @@ let defaultConfig = null;
 // Load configuration from JSON file or localStorage
 async function loadCardsConfig() {
   try {
-    // Load default config from JSON file first (if not already saved)
-    const defaultSaved = localStorage.getItem('defaultCardsConfig');
-    if (!defaultSaved) {
+    // Always load the latest default config from JSON file
+    let jsonConfig = null;
+    try {
       const response = await fetch('cards-config.json');
       if (response.ok) {
-        const jsonConfig = await response.json();
+        jsonConfig = await response.json();
         defaultConfig = JSON.parse(JSON.stringify(jsonConfig)); // Deep copy for reset
         localStorage.setItem('defaultCardsConfig', JSON.stringify(defaultConfig));
       } else {
-        // Fallback to hardcoded default
-        defaultConfig = getDefaultConfig();
-        localStorage.setItem('defaultCardsConfig', JSON.stringify(defaultConfig));
+        throw new Error('Failed to fetch JSON');
       }
-    } else {
-      defaultConfig = JSON.parse(defaultSaved);
+    } catch (fetchError) {
+      // Fallback to hardcoded default
+      defaultConfig = getDefaultConfig();
+      jsonConfig = defaultConfig;
+      localStorage.setItem('defaultCardsConfig', JSON.stringify(defaultConfig));
     }
     
     // Try to load user's saved config from localStorage
     const savedConfig = localStorage.getItem('cardsConfig');
-    if (savedConfig) {
-      cardsConfig = JSON.parse(savedConfig);
+    if (savedConfig && jsonConfig) {
+      const saved = JSON.parse(savedConfig);
+      // Merge saved config with default config to include any new cards
+      const mergedCards = [];
+      const savedCardMap = new Map(saved.cards.map(card => [card.id, card]));
+      
+      // Add all cards from default config, preserving user preferences if they exist
+      jsonConfig.cards.forEach(defaultCard => {
+        const savedCard = savedCardMap.get(defaultCard.id);
+        if (savedCard) {
+          // Use saved preferences (sortOrder, visible) but update other fields from default
+          mergedCards.push({
+            ...defaultCard,
+            sortOrder: savedCard.sortOrder,
+            visible: savedCard.visible
+          });
+        } else {
+          // New card not in saved config, add it
+          mergedCards.push(defaultCard);
+        }
+      });
+      
+      cardsConfig = { cards: mergedCards };
+      localStorage.setItem('cardsConfig', JSON.stringify(cardsConfig));
       return cardsConfig;
     }
     
@@ -54,7 +77,8 @@ function getDefaultConfig() {
       { "id": "business-intelligence", "name": "Business Intelligence", "href": "business-intelligence.html", "icon": "bi-graph-up-arrow", "title": "Business Intelligence", "description": "AI-Enabled Analytics Platform", "sortOrder": 4, "visible": true },
       { "id": "cloud-infrastructure", "name": "Cloud Infrastructure", "href": "cloud-infrastructure.html", "icon": "bi-cloud", "title": "Cloud Infrastructure", "description": "AWS Architecture & Data Flow", "sortOrder": 5, "visible": true },
       { "id": "ivms", "name": "IVMS", "href": "ivms.html", "icon": "bi-geo-alt-fill", "title": "IVMS", "description": "Integrated Vehicle Management System", "sortOrder": 6, "visible": true },
-      { "id": "agentic-agent", "name": "Agentic Agent (AI)", "href": "agentic-agent.html", "icon": "bi-robot", "title": "Agentic Agent (AI)", "description": "Intelligent AI Agent Platform", "sortOrder": 7, "visible": true }
+      { "id": "agentic-agent", "name": "Agentic Agent (AI)", "href": "agentic-agent.html", "icon": "bi-robot", "title": "Agentic Agent (AI)", "description": "Intelligent AI Agent Platform", "sortOrder": 7, "visible": true },
+      { "id": "e-invoicing", "name": "e-Invoicing", "href": "e-invoicing.html", "icon": "bi-receipt", "title": "e-Invoicing", "description": "PEPPOL Standard Compliant Electronic Invoicing", "sortOrder": 8, "visible": true }
     ]
   };
 }
@@ -292,4 +316,13 @@ document.addEventListener('DOMContentLoaded', async function() {
   await loadCardsConfig();
   renderCards();
 });
+
+// Force refresh cards config (useful for debugging)
+window.refreshCardsConfig = async function() {
+  localStorage.removeItem('cardsConfig');
+  localStorage.removeItem('defaultCardsConfig');
+  await loadCardsConfig();
+  renderCards();
+  console.log('Cards config refreshed!');
+};
 
