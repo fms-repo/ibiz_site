@@ -32,6 +32,11 @@
   <div class="container">
     <div class="row align-items-center min-vh-100">
       <div class="col-12 text-center">
+        <!-- Organize Button -->
+        <button class="organize-btn" onclick="openOrganizeModal()" title="Organize Cards">
+          <i class="bi bi-sliders"></i>
+        </button>
+        
         <div class="slide-header" data-aos="fade-down">
           <h1 class="main-title">AIBizs</h1>
           <div class="title-divider"></div>
@@ -52,70 +57,34 @@
           </div>
         </div>
         
-        <div class="applications-grid" data-aos="fade-up" data-aos-delay="200">
-          <a href="erp.html" class="app-card" data-aos="zoom-in" data-aos-delay="300">
-            <div class="app-icon">
-              <i class="bi bi-building"></i>
-            </div>
-            <h3>ERP</h3>
-            <p>Enterprise Resource Planning</p>
-            <div class="app-card-hover-text">Click to explore</div>
-          </a>
-          
-          <a href="qhse.html" class="app-card" data-aos="zoom-in" data-aos-delay="400">
-            <div class="app-icon">
-              <i class="bi bi-shield-check"></i>
-            </div>
-            <h3>QHSE</h3>
-            <p>Quality, Health, Safety & Environment</p>
-            <div class="app-card-hover-text">Click to explore</div>
-          </a>
-          
-          <a href="hrms.html" class="app-card" data-aos="zoom-in" data-aos-delay="500">
-            <div class="app-icon">
-              <i class="bi bi-people"></i>
-            </div>
-            <h3>HRMS</h3>
-            <p>Human Resource Management System</p>
-            <div class="app-card-hover-text">Click to explore</div>
-          </a>
-          
-          <a href="business-intelligence.html" class="app-card" data-aos="zoom-in" data-aos-delay="600">
-            <div class="app-icon">
-              <i class="bi bi-graph-up-arrow"></i>
-            </div>
-            <h3>Business Intelligence</h3>
-            <p>AI-Enabled Analytics Platform</p>
-            <div class="app-card-hover-text">Click to explore</div>
-          </a>
-          
-          <a href="cloud-infrastructure.html" class="app-card" data-aos="zoom-in" data-aos-delay="700">
-            <div class="app-icon">
-              <i class="bi bi-cloud"></i>
-            </div>
-            <h3>Cloud Infrastructure</h3>
-            <p>AWS Architecture & Data Flow</p>
-            <div class="app-card-hover-text">Click to explore</div>
-          </a>
-          
-          <a href="ivms.html" class="app-card" data-aos="zoom-in" data-aos-delay="800">
-            <div class="app-icon">
-              <i class="bi bi-geo-alt-fill"></i>
-            </div>
-            <h3>IVMS</h3>
-            <p>Integrated Vehicle Management System</p>
-            <div class="app-card-hover-text">Click to explore</div>
-          </a>
-          
-          <a href="agentic-agent.html" class="app-card" data-aos="zoom-in" data-aos-delay="900">
-            <div class="app-icon">
-              <i class="bi bi-robot"></i>
-            </div>
-            <h3>Agentic Agent (AI)</h3>
-            <p>Intelligent AI Agent Platform</p>
-            <div class="app-card-hover-text">Click to explore</div>
-          </a>
+        <div class="applications-grid" id="applicationsGrid" data-aos="fade-up" data-aos-delay="200">
+          <!-- Cards will be dynamically generated from JSON config -->
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Organize Modal -->
+  <div id="organizeModal" class="organize-modal" onclick="closeOrganizeModal(event)">
+    <div class="organize-modal-content" onclick="event.stopPropagation()">
+      <div class="organize-modal-header">
+        <h2><i class="bi bi-sliders"></i> Organize Cards</h2>
+        <button class="organize-modal-close" onclick="closeOrganizeModal()" aria-label="Close">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      <div class="organize-modal-body">
+        <div class="organize-cards-list" id="organizeCardsList">
+          <!-- Cards will be dynamically generated -->
+        </div>
+      </div>
+      <div class="organize-modal-footer">
+        <button class="organize-btn-reset" onclick="resetCardsConfig()">
+          <i class="bi bi-arrow-counterclockwise"></i> Reset to Default
+        </button>
+        <button class="organize-btn-save" onclick="saveCardsConfig()">
+          <i class="bi bi-check-lg"></i> Save Changes
+        </button>
       </div>
     </div>
   </div>
@@ -123,6 +92,9 @@
   <!-- Vendor JS Files -->
   <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../assets/vendor/aos/aos.js"></script>
+
+  <!-- Card Organization Script -->
+  <script src="organize-cards.js"></script>
 
   <!-- Initialize AOS -->
   <script>

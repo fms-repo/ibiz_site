@@ -1,0 +1,75 @@
+{
+  "cards": [
+    {
+      "id": "erp",
+      "name": "ERP",
+      "href": "erp.html",
+      "icon": "bi-building",
+      "title": "ERP",
+      "description": "Enterprise Resource Planning",
+      "sortOrder": 1,
+      "visible": true
+    },
+    {
+      "id": "qhse",
+      "name": "QHSE",
+      "href": "qhse.html",
+      "icon": "bi-shield-check",
+      "title": "QHSE",
+      "description": "Quality, Health, Safety & Environment",
+      "sortOrder": 2,
+      "visible": true
+    },
+    {
+      "id": "hrms",
+      "name": "HRMS",
+      "href": "hrms.html",
+      "icon": "bi-people",
+      "title": "HRMS",
+      "description": "Human Resource Management System",
+      "sortOrder": 3,
+      "visible": true
+    },
+    {
+      "id": "business-intelligence",
+      "name": "Business Intelligence",
+      "href": "business-intelligence.html",
+      "icon": "bi-graph-up-arrow",
+      "title": "Business Intelligence",
+      "description": "AI-Enabled Analytics Platform",
+      "sortOrder": 4,
+      "visible": true
+    },
+    {
+      "id": "cloud-infrastructure",
+      "name": "Cloud Infrastructure",
+      "href": "cloud-infrastructure.html",
+      "icon": "bi-cloud",
+      "title": "Cloud Infrastructure",
+      "description": "AWS Architecture & Data Flow",
+      "sortOrder": 5,
+      "visible": true
+    },
+    {
+      "id": "ivms",
+      "name": "IVMS",
+      "href": "ivms.html",
+      "icon": "bi-geo-alt-fill",
+      "title": "IVMS",
+      "description": "Integrated Vehicle Management System",
+      "sortOrder": 6,
+      "visible": true
+    },
+    {
+      "id": "agentic-agent",
+      "name": "Agentic Agent (AI)",
+      "href": "agentic-agent.html",
+      "icon": "bi-robot",
+      "title": "Agentic Agent (AI)",
+      "description": "Intelligent AI Agent Platform",
+      "sortOrder": 7,
+      "visible": true
+    }
+  ]
+}
+

@@ -969,3 +969,360 @@ body.presentation-body [data-aos].aos-animate {
   background: var(--accent-color);
 }
 
+/* Organize Button Styles */
+.organize-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: var(--aibizs-gradient);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 156, 220, 0.3);
+  transition: all 0.3s ease;
+}
+
+.organize-btn:hover {
+  transform: scale(1.1) rotate(90deg);
+  box-shadow: 0 6px 20px rgba(0, 156, 220, 0.5);
+}
+
+/* Organize Modal Styles */
+.organize-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 10000;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.organize-modal.show {
+  display: flex;
+}
+
+.organize-modal-content {
+  background: var(--surface-color);
+  border-radius: 20px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.3s ease;
+  overflow: hidden;
+}
+
+.organize-modal-header {
+  padding: 25px 30px;
+  border-bottom: 2px solid var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--aibizs-gradient);
+}
+
+.organize-modal-header h2 {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.8rem;
+  color: white;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.organize-modal-close {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.organize-modal-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+}
+
+.organize-modal-body {
+  padding: 30px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.organize-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.organize-card-item {
+  background: var(--background-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.organize-card-item:hover {
+  border-color: var(--accent-color);
+  box-shadow: 0 5px 15px rgba(0, 156, 220, 0.2);
+}
+
+.organize-card-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex: 1;
+}
+
+.organize-card-icon {
+  width: 50px;
+  height: 50px;
+  background: var(--aibizs-gradient);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.organize-card-details h4 {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.2rem;
+  color: var(--heading-color);
+  margin: 0 0 5px 0;
+}
+
+.organize-card-details small {
+  color: var(--default-color);
+  font-size: 0.9rem;
+}
+
+.organize-card-controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.organize-control-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.organize-control-group label {
+  color: var(--default-color);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.organize-sort-input {
+  width: 70px;
+  padding: 8px 12px;
+  background: var(--background-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  color: var(--heading-color);
+  font-size: 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.organize-sort-input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(0, 156, 220, 0.1);
+}
+
+/* Toggle Switch */
+.organize-toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+  cursor: pointer;
+}
+
+.organize-toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.organize-toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--primary-color);
+  transition: 0.3s;
+  border-radius: 26px;
+}
+
+.organize-toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+.organize-toggle-switch input:checked + .organize-toggle-slider {
+  background-color: var(--accent-color);
+}
+
+.organize-toggle-switch input:checked + .organize-toggle-slider:before {
+  transform: translateX(24px);
+}
+
+.organize-modal-footer {
+  padding: 20px 30px;
+  border-top: 2px solid var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  background: var(--background-color);
+}
+
+.organize-btn-reset,
+.organize-btn-save {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.organize-btn-reset {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--default-color);
+  border: 2px solid var(--primary-color);
+}
+
+.organize-btn-reset:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: var(--accent-color);
+}
+
+.organize-btn-save {
+  background: var(--aibizs-gradient);
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 156, 220, 0.3);
+}
+
+.organize-btn-save:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 156, 220, 0.5);
+}
+
+/* Notification Styles */
+.organize-notification {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  padding: 15px 25px;
+  background: var(--surface-color);
+  border: 2px solid var(--accent-color);
+  border-radius: 10px;
+  color: var(--heading-color);
+  font-weight: 500;
+  z-index: 10001;
+  opacity: 0;
+  transform: translateX(400px);
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.organize-notification.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.organize-notification-success {
+  border-color: #28a745;
+  background: rgba(40, 167, 69, 0.1);
+}
+
+/* Responsive Design for Organize Modal */
+@media (max-width: 768px) {
+  .organize-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+    top: 15px;
+    right: 15px;
+  }
+
+  .organize-modal-content {
+    width: 95%;
+    max-height: 95vh;
+  }
+
+  .organize-modal-header {
+    padding: 20px;
+  }
+
+  .organize-modal-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .organize-card-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .organize-card-controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .organize-modal-footer {
+    flex-direction: column;
+  }
+
+  .organize-btn-reset,
+  .organize-btn-save {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
