@@ -79,6 +79,16 @@
       "description": "PEPPOL Standard Compliant Electronic Invoicing",
       "sortOrder": 8,
       "visible": true
+    },
+    {
+      "id": "mobile-application",
+      "name": "Mobile Application",
+      "href": "mobile-application.html",
+      "icon": "bi-phone",
+      "title": "Mobile Application",
+      "description": "AI-Powered Mobile Platform - Connect with Any Application",
+      "sortOrder": 9,
+      "visible": true
     }
   ]
 }

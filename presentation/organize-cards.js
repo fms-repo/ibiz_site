@@ -78,7 +78,8 @@ function getDefaultConfig() {
       { "id": "cloud-infrastructure", "name": "Cloud Infrastructure", "href": "cloud-infrastructure.html", "icon": "bi-cloud", "title": "Cloud Infrastructure", "description": "AWS Architecture & Data Flow", "sortOrder": 5, "visible": true },
       { "id": "ivms", "name": "IVMS", "href": "ivms.html", "icon": "bi-geo-alt-fill", "title": "IVMS", "description": "Integrated Vehicle Management System", "sortOrder": 6, "visible": true },
       { "id": "agentic-agent", "name": "Agentic Agent (AI)", "href": "agentic-agent.html", "icon": "bi-robot", "title": "Agentic Agent (AI)", "description": "Intelligent AI Agent Platform", "sortOrder": 7, "visible": true },
-      { "id": "e-invoicing", "name": "e-Invoicing", "href": "e-invoicing.html", "icon": "bi-receipt", "title": "e-Invoicing", "description": "PEPPOL Standard Compliant Electronic Invoicing", "sortOrder": 8, "visible": true }
+      { "id": "e-invoicing", "name": "e-Invoicing", "href": "e-invoicing.html", "icon": "bi-receipt", "title": "e-Invoicing", "description": "PEPPOL Standard Compliant Electronic Invoicing", "sortOrder": 8, "visible": true },
+      { "id": "mobile-application", "name": "Mobile Application", "href": "mobile-application.html", "icon": "bi-phone", "title": "Mobile Application", "description": "AI-Powered Mobile Platform - Connect with Any Application", "sortOrder": 9, "visible": true }
     ]
   };
 }
