@@ -48,14 +48,61 @@
           </div>
         </div>
 
-        <div class="cloud-infra-images" data-aos="fade-up" data-aos-delay="400">
-          <figure class="cloud-infra-figure">
-            <img src="clouud_intr_imag.png" alt="AWS cloud infrastructure architecture diagram" class="cloud-infra-img" loading="lazy" decoding="async">
-          </figure>
-          <figure class="cloud-infra-figure">
-            <img src="cicd.png" alt="CI/CD pipeline diagram" class="cloud-infra-img" loading="lazy" decoding="async">
-          </figure>
-        </div>
+        <nav class="cloud-infra-subnav" aria-label="Infrastructure topics" data-aos="fade-up" data-aos-delay="350">
+          <a href="#overview">Overview</a>
+          <a href="#backup-strategy-security">Backup Strategy And Security Measures</a>
+          <a href="#monitoring-incident">Monitoring &amp; Incident Management</a>
+        </nav>
+
+        <section id="overview" class="cloud-infra-section" data-aos="fade-up" data-aos-delay="400">
+          <h2 class="cloud-infra-section-title">Overview</h2>
+          <p class="cloud-infra-lead">High-level architecture and CI/CD flow for our cloud environment.</p>
+          <div class="cloud-infra-images">
+            <figure class="cloud-infra-figure">
+              <img src="clouud_intr_imag.png" alt="AWS cloud infrastructure architecture diagram" class="cloud-infra-img" loading="lazy" decoding="async">
+            </figure>
+            <figure class="cloud-infra-figure">
+              <img src="cicd.png" alt="CI/CD pipeline diagram" class="cloud-infra-img" loading="lazy" decoding="async">
+            </figure>
+          </div>
+        </section>
+
+        <section id="backup-strategy-security" class="cloud-infra-section" data-aos="fade-up" data-aos-delay="450">
+          <h2 class="cloud-infra-section-title">Backup Strategy And Security Measures</h2>
+          <div class="cloud-infra-prose">
+            <h3 class="cloud-infra-subtitle">Backup strategy</h3>
+            <ul class="cloud-infra-list">
+              <li><strong>Daily protection.</strong> We run daily backups of all virtual machines (VMs), and database (DB) backups every 12 hours.</li>
+              <li><strong>Data recovery.</strong> Regular backups support durability and enable fast recovery from unexpected incidents.</li>
+              <li><strong>Storage.</strong> Backup data is stored in S3 for reliable, scalable storage.</li>
+            </ul>
+            <h3 class="cloud-infra-subtitle">Security measures</h3>
+            <ul class="cloud-infra-list">
+              <li><strong>Restricted access.</strong> Production is isolated so only authorized personnel can work with it.</li>
+              <li><strong>Zero-touch deployment.</strong> Releases go through CI/CD pipelines—no manual changes on production systems.</li>
+              <li><strong>Secure connection.</strong> Access to production requires a VPN, so sessions stay encrypted end-to-end.</li>
+              <li><strong>Stack separation.</strong> The production stack is isolated from non-production stacks to limit blast radius and reduce risk.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="monitoring-incident" class="cloud-infra-section" data-aos="fade-up" data-aos-delay="500">
+          <h2 class="cloud-infra-section-title">Monitoring &amp; Incident Management</h2>
+          <div class="cloud-infra-prose">
+            <h3 class="cloud-infra-subtitle">Robust monitoring tools</h3>
+            <ul class="cloud-infra-list">
+              <li><strong>URL monitoring.</strong> Regular checks keep URLs reachable and confirm endpoints behave as expected.</li>
+              <li><strong>Usage metrics.</strong> We track resource consumption across CPU, memory, and disk.</li>
+              <li><strong>Server performance.</strong> We monitor server health, latency, and bottlenecks so issues surface early.</li>
+            </ul>
+            <h3 class="cloud-infra-subtitle">Incident management with SLA</h3>
+            <ul class="cloud-infra-list">
+              <li><strong>Rapid response.</strong> Incidents are handled quickly, with dedicated teams ready to step in.</li>
+              <li><strong>Service Level Agreement (SLA).</strong> We commit to strong service uptime; our SLAs make that expectation explicit.</li>
+              <li><strong>Communication.</strong> Clear channels exist for reporting incidents, and stakeholders stay informed as resolution progresses.</li>
+            </ul>
+          </div>
+        </section>
       </div>
     </div>
   </div>
