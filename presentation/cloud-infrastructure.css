@@ -1,6 +1,6 @@
-/* Cloud Infrastructure — navigation and sections */
+/* Cloud Infrastructure — high specificity so nav links beat Bootstrap reboot on all hosts */
 
-.cloud-infra-subnav {
+body.presentation-body nav.cloud-infra-subnav {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -13,14 +13,16 @@
   border: 1px solid rgba(0, 156, 220, 0.35);
 }
 
-.cloud-infra-subnav a {
+body.presentation-body nav.cloud-infra-subnav a,
+body.presentation-body nav.cloud-infra-subnav a:link,
+body.presentation-body nav.cloud-infra-subnav a:visited {
   display: inline-block;
   padding: 10px 16px;
   font-size: 0.9rem;
   font-weight: 600;
-  font-family: var(--heading-font);
-  color: var(--heading-color);
-  text-decoration: none;
+  font-family: var(--heading-font, "Nunito Sans", sans-serif);
+  color: var(--heading-color, #e0e9f2);
+  text-decoration: none !important;
   border-radius: 10px;
   border: 1px solid transparent;
   transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
@@ -29,91 +31,91 @@
   max-width: 100%;
 }
 
-.cloud-infra-subnav a:hover,
-.cloud-infra-subnav a:focus-visible {
-  color: var(--accent-color);
+body.presentation-body nav.cloud-infra-subnav a:hover,
+body.presentation-body nav.cloud-infra-subnav a:focus-visible {
+  color: var(--accent-color, #009cdc);
   background: rgba(0, 156, 220, 0.12);
   border-color: rgba(0, 156, 220, 0.45);
   outline: none;
 }
 
-.cloud-infra-section {
+body.presentation-body .cloud-infra-section {
   scroll-margin-top: 100px;
   margin-bottom: 48px;
 }
 
-.cloud-infra-section:last-child {
+body.presentation-body .cloud-infra-section:last-child {
   margin-bottom: 20px;
 }
 
-.cloud-infra-section-title {
+body.presentation-body .cloud-infra-section-title {
   font-size: 1.35rem;
   font-weight: 700;
-  color: var(--heading-color);
-  font-family: var(--heading-font);
+  color: var(--heading-color, #e0e9f2);
+  font-family: var(--heading-font, "Nunito Sans", sans-serif);
   margin-bottom: 12px;
   padding-bottom: 10px;
   border-bottom: 2px solid rgba(0, 156, 220, 0.25);
 }
 
-.cloud-infra-lead {
+body.presentation-body .cloud-infra-lead {
   color: var(--default-color);
   font-size: 0.95rem;
   margin-bottom: 24px;
   max-width: 52rem;
 }
 
-.cloud-infra-prose {
+body.presentation-body .cloud-infra-prose {
   color: var(--default-color);
   font-size: 0.95rem;
   line-height: 1.65;
   max-width: 52rem;
 }
 
-.cloud-infra-prose p {
+body.presentation-body .cloud-infra-prose p {
   margin-bottom: 0;
 }
 
-.cloud-infra-subtitle {
+body.presentation-body .cloud-infra-subtitle {
   font-size: 1.05rem;
   font-weight: 700;
-  color: var(--heading-color);
-  font-family: var(--heading-font);
+  color: var(--heading-color, #e0e9f2);
+  font-family: var(--heading-font, "Nunito Sans", sans-serif);
   margin: 1.5rem 0 0.75rem;
 }
 
-.cloud-infra-subtitle:first-child {
+body.presentation-body .cloud-infra-subtitle:first-child {
   margin-top: 0;
 }
 
-.cloud-infra-list {
+body.presentation-body .cloud-infra-list {
   margin: 0 0 0.25rem;
   padding-left: 1.25rem;
 }
 
-.cloud-infra-list li {
+body.presentation-body .cloud-infra-list li {
   margin-bottom: 0.65rem;
 }
 
-.cloud-infra-list li:last-child {
+body.presentation-body .cloud-infra-list li:last-child {
   margin-bottom: 0;
 }
 
-.cloud-infra-list strong {
-  color: color-mix(in srgb, var(--heading-color), var(--default-color) 15%);
+body.presentation-body .cloud-infra-list strong {
+  color: color-mix(in srgb, var(--heading-color, #e0e9f2), var(--default-color) 15%);
   font-weight: 700;
 }
 
 /* Static architecture images */
 
-.cloud-infra-images {
+body.presentation-body .cloud-infra-images {
   margin: 0;
   display: flex;
   flex-direction: column;
   gap: 32px;
 }
 
-.cloud-infra-figure {
+body.presentation-body .cloud-infra-figure {
   margin: 0;
   padding: 24px;
   background: rgba(27, 38, 44, 0.5);
@@ -122,7 +124,7 @@
   text-align: center;
 }
 
-.cloud-infra-img {
+body.presentation-body .cloud-infra-img {
   display: block;
   width: 100%;
   max-width: 100%;
@@ -132,11 +134,11 @@
 }
 
 @media (max-width: 576px) {
-  .cloud-infra-figure {
+  body.presentation-body .cloud-infra-figure {
     padding: 16px;
   }
 
-  .cloud-infra-images {
+  body.presentation-body .cloud-infra-images {
     gap: 24px;
   }
 }
