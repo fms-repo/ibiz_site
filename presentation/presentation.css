@@ -189,6 +189,9 @@ body.presentation-body [data-aos].aos-animate {
   transition: all 0.3s ease;
   min-width: 150px;
   box-shadow: 0 5px 15px rgba(0, 156, 220, 0.2);
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 .cert-badge:hover {

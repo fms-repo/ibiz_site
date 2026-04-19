@@ -650,6 +650,57 @@ h6 {
   border-color: var(--accent-color);
 }
 
+.footer .footer-iso-certifications {
+  gap: 14px;
+  margin-top: 1.5rem;
+}
+
+.footer .footer-iso-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 132px;
+  padding: 16px 18px;
+  border: 2px solid var(--accent-color);
+  border-radius: 14px;
+  background-color: var(--surface-color);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 14px rgba(0, 156, 220, 0.12);
+}
+
+.footer .footer-iso-badge:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(0, 156, 220, 0.28);
+  background-color: color-mix(in srgb, var(--accent-color), var(--surface-color) 88%);
+}
+
+.footer .footer-iso-badge i {
+  font-size: 2rem;
+  color: #ffd700;
+  line-height: 1;
+}
+
+.footer .footer-iso-badge span {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+  line-height: 1.2;
+}
+
+.footer .footer-iso-badge small {
+  font-size: 0.72rem;
+  color: color-mix(in srgb, var(--default-color), transparent 10%);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-family: var(--heading-font);
+}
+
 .footer h4 {
   font-size: 16px;
   font-weight: bold;
