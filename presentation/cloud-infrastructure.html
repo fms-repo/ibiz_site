@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Cloud Infrastructure | AIBizs</title>
-  <meta name="description" content="AIBizs Cloud Infrastructure - AWS Architecture with Real-time Data Flow Visualization">
+  <meta name="description" content="AIBizs Cloud Infrastructure — architecture and CI/CD diagrams">
 
   <!-- Favicons -->
   <link href="../assets/img/favicon.png" rel="icon">
@@ -43,228 +43,18 @@
             </div>
             <div>
               <h1 class="app-title" data-aos="fade-left" data-aos-delay="200">Cloud Infrastructure</h1>
-              <p class="app-subtitle" data-aos="fade-left" data-aos-delay="300">AWS Architecture with Real-time Data Flow</p>
+              <p class="app-subtitle" data-aos="fade-left" data-aos-delay="300">Architecture &amp; CI/CD overview</p>
             </div>
           </div>
         </div>
 
-        <!-- Architecture Diagram -->
-        <div class="architecture-wrapper" data-aos="fade-up" data-aos-delay="400">
-          <div class="aws-cloud-boundary">
-            <div class="cloud-header">
-              <i class="bi bi-cloud-fill"></i>
-              <span>AWS Cloud</span>
-            </div>
-
-            <!-- Users Row -->
-            <div class="users-row">
-              <div class="user-box">
-                <i class="bi bi-people-fill"></i>
-                <span>Users</span>
-              </div>
-            </div>
-
-            <!-- Main Architecture Grid -->
-            <div class="architecture-grid">
-              
-              <!-- Frontend Column -->
-              <div class="frontend-column">
-                <h3 class="column-title">Frontend</h3>
-                
-                <div class="service-box cloudfront-box" id="cloudfront">
-                  <div class="service-icon">
-                    <i class="bi bi-speedometer2"></i>
-                  </div>
-                  <div class="service-name">CloudFront CDN</div>
-                </div>
-                
-                <div class="service-box s3-box" id="s3">
-                  <div class="service-icon">
-                    <i class="bi bi-archive"></i>
-                  </div>
-                  <div class="service-name">S3 Bucket</div>
-                </div>
-              </div>
-
-              <!-- Backend Column (VPC) -->
-              <div class="backend-column">
-                <div class="vpc-header">
-                  <i class="bi bi-shield-lock"></i>
-                  <span>VPC</span>
-                </div>
-                
-                <h3 class="column-title">Backend</h3>
-
-                <!-- Internet Gateway -->
-                <div class="igw-box" id="igw">
-                  <div class="service-icon">
-                    <i class="bi bi-globe"></i>
-                  </div>
-                  <div class="service-name">Internet Gateway</div>
-                </div>
-
-                <!-- Application Load Balancer -->
-                <div class="alb-box" id="alb">
-                  <div class="service-icon">
-                    <i class="bi bi-arrow-left-right"></i>
-                  </div>
-                  <div class="service-name">Application Load Balancer</div>
-                </div>
-
-                <!-- Public Subnets Row -->
-                <div class="subnets-row public-subnets-row">
-                  <div class="subnet-label-left">Public Subnets</div>
-                  <div class="subnets-group">
-                    <div class="subnet-box" id="public-subnet-1">
-                      <i class="bi bi-lock-fill"></i>
-                      <div class="subnet-ip">172.16.0.0</div>
-                    </div>
-                    <div class="subnet-box" id="public-subnet-2">
-                      <i class="bi bi-lock-fill"></i>
-                      <div class="subnet-ip">172.16.1.0</div>
-                    </div>
-                    <div class="subnet-box" id="public-subnet-3">
-                      <i class="bi bi-lock-fill"></i>
-                      <div class="subnet-ip">172.16.2.0</div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Private Subnets Row -->
-                <div class="subnets-row private-subnets-row">
-                  <div class="subnet-label-left">Private Subnets</div>
-                  <div class="subnets-group">
-                    <div class="subnet-box" id="private-subnet-1">
-                      <i class="bi bi-lock-fill"></i>
-                      <div class="subnet-ip">172.16.0.0</div>
-                    </div>
-                    <div class="subnet-box" id="private-subnet-2">
-                      <i class="bi bi-lock-fill"></i>
-                      <div class="subnet-ip">172.16.1.0</div>
-                    </div>
-                    <div class="subnet-box" id="private-subnet-3">
-                      <i class="bi bi-lock-fill"></i>
-                      <div class="subnet-ip">172.16.2.0</div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- RDS Row -->
-                <div class="rds-row">
-                  <div class="rds-group">
-                    <div class="rds-box" id="rds-1">
-                      <div class="service-icon">
-                        <i class="bi bi-database"></i>
-                      </div>
-                      <div class="service-name">RDS</div>
-                    </div>
-                    <div class="rds-box active" id="rds-2">
-                      <div class="service-icon">
-                        <i class="bi bi-database"></i>
-                      </div>
-                      <div class="service-name">RDS</div>
-                      <div class="failover-label">FAILOVER</div>
-                    </div>
-                    <div class="rds-box" id="rds-3">
-                      <div class="service-icon">
-                        <i class="bi bi-database"></i>
-                      </div>
-                      <div class="service-name">RDS</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Integration Column -->
-              <div class="integration-column">
-                <h3 class="column-title">Integration Components</h3>
-                <div class="integration-grid">
-                  <div class="integration-box">
-                    <i class="bi bi-key"></i>
-                    <span>Secrets Manager</span>
-                  </div>
-                  <div class="integration-box">
-                    <i class="bi bi-gear"></i>
-                    <span>Systems Manager</span>
-                  </div>
-                  <div class="integration-box">
-                    <i class="bi bi-box"></i>
-                    <span>Docker</span>
-                  </div>
-                  <div class="integration-box">
-                    <i class="bi bi-shield-check"></i>
-                    <span>IAM</span>
-                  </div>
-                  <div class="integration-box">
-                    <i class="bi bi-graph-up"></i>
-                    <span>CloudWatch</span>
-                  </div>
-                  <div class="integration-box">
-                    <i class="bi bi-shield-lock"></i>
-                    <span>Cloudflare</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- SVG Flow Arrows -->
-            <svg class="flow-arrows-svg" viewBox="0 0 1000 800" preserveAspectRatio="none">
-              <defs>
-                <marker id="arrowhead-blue" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth">
-                  <path d="M0,0 L0,8 L8,4 z" fill="#009cdc" />
-                </marker>
-                <marker id="arrowhead-red" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth">
-                  <path d="M0,0 L0,8 L8,4 z" fill="#ff6b6b" />
-                </marker>
-              </defs>
-              
-              <!-- User to CloudFront -->
-              <path class="flow-path" id="path-user-cloudfront" d="M 500 100 Q 600 150 700 220" fill="none" stroke="#009cdc" stroke-width="4" marker-end="url(#arrowhead-blue)"/>
-              
-              <!-- CloudFront to S3 -->
-              <path class="flow-path" id="path-cloudfront-s3" d="M 700 280 L 700 360" fill="none" stroke="#009cdc" stroke-width="4" marker-end="url(#arrowhead-blue)"/>
-              
-              <!-- User to ALB -->
-              <path class="flow-path" id="path-user-alb" d="M 500 100 Q 400 150 500 280" fill="none" stroke="#009cdc" stroke-width="4" marker-end="url(#arrowhead-blue)"/>
-              
-              <!-- ALB to IGW -->
-              <path class="flow-path" id="path-alb-igw" d="M 600 280 L 600 200" fill="none" stroke="#009cdc" stroke-width="4" marker-end="url(#arrowhead-blue)"/>
-              
-              <!-- ALB to Public Subnets -->
-              <path class="flow-path" id="path-alb-subnet1" d="M 450 320 L 350 380" fill="none" stroke="#009cdc" stroke-width="4" marker-end="url(#arrowhead-blue)"/>
-              <path class="flow-path" id="path-alb-subnet2" d="M 500 320 L 500 380" fill="none" stroke="#009cdc" stroke-width="4" marker-end="url(#arrowhead-blue)"/>
-              <path class="flow-path" id="path-alb-subnet3" d="M 550 320 L 650 380" fill="none" stroke="#009cdc" stroke-width="4" marker-end="url(#arrowhead-blue)"/>
-              
-              <!-- Public to Private Subnets -->
-              <path class="flow-path" id="path-public-private1" d="M 350 420 L 350 480" fill="none" stroke="#009cdc" stroke-width="4" marker-end="url(#arrowhead-blue)"/>
-              <path class="flow-path" id="path-public-private2" d="M 500 420 L 500 480" fill="none" stroke="#009cdc" stroke-width="4" marker-end="url(#arrowhead-blue)"/>
-              <path class="flow-path" id="path-public-private3" d="M 650 420 L 650 480" fill="none" stroke="#009cdc" stroke-width="4" marker-end="url(#arrowhead-blue)"/>
-              
-              <!-- Private Subnets to RDS -->
-              <path class="flow-path" id="path-private-rds1" d="M 350 520 L 350 600" fill="none" stroke="#009cdc" stroke-width="4" marker-end="url(#arrowhead-blue)"/>
-              <path class="flow-path" id="path-private-rds2" d="M 500 520 L 500 600" fill="none" stroke="#009cdc" stroke-width="4" marker-end="url(#arrowhead-blue)"/>
-              <path class="flow-path" id="path-private-rds3" d="M 650 520 L 650 600" fill="none" stroke="#009cdc" stroke-width="4" marker-end="url(#arrowhead-blue)"/>
-              
-              <!-- RDS Failover -->
-              <path class="flow-path failover" id="path-rds-failover1" d="M 400 640 L 450 640" fill="none" stroke="#ff6b6b" stroke-width="4" marker-end="url(#arrowhead-red)"/>
-              <path class="flow-path failover" id="path-rds-failover2" d="M 550 640 L 600 640" fill="none" stroke="#ff6b6b" stroke-width="4" marker-end="url(#arrowhead-red)"/>
-            </svg>
-          </div>
-        </div>
-
-        <!-- Legend -->
-        <div class="architecture-legend" data-aos="fade-up" data-aos-delay="600">
-          <h4><i class="bi bi-info-circle"></i> Data Flow Legend</h4>
-          <div class="legend-items">
-            <div class="legend-item">
-              <div class="legend-arrow active"></div>
-              <span>Active Data Flow</span>
-            </div>
-            <div class="legend-item">
-              <div class="legend-arrow failover"></div>
-              <span>Failover Connection</span>
-            </div>
-          </div>
+        <div class="cloud-infra-images" data-aos="fade-up" data-aos-delay="400">
+          <figure class="cloud-infra-figure">
+            <img src="clouud_intr_imag.png" alt="AWS cloud infrastructure architecture diagram" class="cloud-infra-img" loading="lazy" decoding="async">
+          </figure>
+          <figure class="cloud-infra-figure">
+            <img src="cicd.png" alt="CI/CD pipeline diagram" class="cloud-infra-img" loading="lazy" decoding="async">
+          </figure>
         </div>
       </div>
     </div>
@@ -276,43 +66,33 @@
 
   <!-- Initialize AOS -->
   <script>
-    // Sequential drop animation from top to bottom
     function animateElementsSequentially() {
       const elements = Array.from(document.querySelectorAll('[data-aos]'));
-      
-      // Sort elements by their position from top to bottom
       elements.sort((a, b) => {
         const rectA = a.getBoundingClientRect();
         const rectB = b.getBoundingClientRect();
         return rectA.top - rectB.top;
       });
-      
-      // Animate each element with a delay
       elements.forEach((el, index) => {
         setTimeout(() => {
           el.classList.add('aos-animate');
-        }, index * 150); // 150ms delay between each element for smoother effect
+        }, index * 150);
       });
     }
-    
-    // Initialize AOS but disable it, we'll use our own animation
+
     AOS.init({
       duration: 0,
       easing: 'ease-in-out',
       once: true,
       disable: true
     });
-    
-    // Start sequential animation after page load
+
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', animateElementsSequentially);
     } else {
       setTimeout(animateElementsSequentially, 100);
     }
   </script>
-
-  <!-- Data Flow Animation Script -->
-  <script src="cloud-infrastructure.js"></script>
 
 </body>
 
