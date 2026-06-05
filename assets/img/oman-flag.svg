@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 60" role="img" aria-label="Flag of Oman">
+  <rect width="30" height="60" fill="#ffffff"/>
+  <rect x="30" width="90" height="30" fill="#db161b"/>
+  <rect x="30" y="30" width="90" height="30" fill="#007229"/>
+  <g fill="#ffffff" transform="translate(8, 18) scale(0.55)">
+    <path d="M12 4 L20 4 L20 8 L16 8 L22 22 L18 22 L14 12 L10 22 L6 22 L12 8 L8 8 Z"/>
+    <rect x="10" y="24" width="4" height="14" rx="1"/>
+    <path d="M4 38 L24 38 L24 42 L4 42 Z"/>
+  </g>
+</svg>
