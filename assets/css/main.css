@@ -1026,10 +1026,34 @@ section,
   align-items: center;
   overflow: hidden;
   padding: 100px 0;
-  background-image: url('../img/hero-bg.jpg');
+}
+
+.hero .hero-backgrounds {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero .hero-background {
+  position: absolute;
+  inset: 0;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.hero .hero-background.is-visible {
+  opacity: 1;
+}
+
+.hero .hero-background[data-bg="0"] {
+  background-image: url('../img/hero-bg.jpg');
+}
+
+.hero .hero-background[data-bg="1"] {
+  background-image: url('../img/hero-bg_1.png');
 }
 
 .hero::after {
@@ -1074,6 +1098,32 @@ section,
   color: var(--contrast-color);
   margin: 0;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero .hero-text-slider {
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.hero .hero-slider-pagination {
+  position: relative;
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.hero .hero-slider-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: color-mix(in srgb, var(--default-color), transparent 60%);
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.hero .hero-slider-pagination .swiper-pagination-bullet-active {
+  background-color: var(--accent-color);
+  width: 28px;
+  border-radius: 5px;
 }
 
 .hero .main-heading {

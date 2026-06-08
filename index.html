@@ -151,6 +151,10 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero section">
+      <div class="hero-backgrounds" aria-hidden="true">
+        <div class="hero-background is-visible" data-bg="0"></div>
+        <div class="hero-background" data-bg="1"></div>
+      </div>
       <div class="container">
         <div class="row">
           <div class="col-lg-7 content-col" data-aos="fade-up">
@@ -163,14 +167,48 @@
                 <h5>INNOVATIVE SOLUTIONS FROM THE SULTANATE OF OMAN</h5>
               </div>
 
-              <div class="main-heading">
-                <h1>Future-Ready <br>AI Solutions</h1>
-              </div>
+              <div class="hero-text-slider swiper init-swiper">
+                <script type="application/json" class="swiper-config">
+                  {
+                    "loop": true,
+                    "speed": 800,
+                    "autoplay": {
+                      "delay": 6000,
+                      "disableOnInteraction": false
+                    },
+                    "effect": "fade",
+                    "fadeEffect": {
+                      "crossFade": true
+                    },
+                    "slidesPerView": 1,
+                    "pagination": {
+                      "el": ".hero-slider-pagination",
+                      "clickable": true
+                    }
+                  }
+                </script>
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="main-heading">
+                      <h1>Future-Ready <br>AI Solutions</h1>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="description">
+                      <p>Headquartered in Muscat, AIBizs is a fast-growing Omani technology company empowering businesses across Oman and the wider region through intelligent web solutions, AI adoption consulting, big data management, and enterprise technology integration.</p>
+                    </div>
+                  </div>
 
-              <div class="divider"></div>
-
-              <div class="description">
-                <p>Headquartered in Muscat, AIBizs is a fast-growing Omani technology company empowering businesses across Oman and the wider region through intelligent web solutions, AI adoption consulting, big data management, and enterprise technology integration.</p>
+                  <div class="swiper-slide">
+                    <div class="main-heading">
+                      <h1>OTA Approved ASP <br>for Oman E-Invoicing</h1>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="description">
+                      <p>AIBizs is an OTA-approved Application Service Provider (ASP) and PEPPOL-approved e-invoicing provider, helping organizations across Oman meet Tax Authority requirements and exchange compliant electronic invoices through international PEPPOL standards.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="hero-slider-pagination"></div>
               </div>
 
               <div class="cta-button">

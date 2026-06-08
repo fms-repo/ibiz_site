@@ -113,6 +113,26 @@
         swiperElement.querySelector(".swiper-config").innerHTML.trim()
       );
 
+      if (swiperElement.classList.contains("hero-text-slider")) {
+        const heroSection = swiperElement.closest(".hero");
+        const bgLayers = heroSection ? heroSection.querySelectorAll(".hero-background") : [];
+
+        const updateHeroBackground = function(index) {
+          bgLayers.forEach(function(layer, i) {
+            layer.classList.toggle("is-visible", i === index);
+          });
+        };
+
+        config.on = {
+          init: function(swiper) {
+            updateHeroBackground(swiper.realIndex);
+          },
+          slideChange: function(swiper) {
+            updateHeroBackground(swiper.realIndex);
+          }
+        };
+      }
+
       if (swiperElement.classList.contains("swiper-tab")) {
         initSwiperWithCustomPagination(swiperElement, config);
       } else {
