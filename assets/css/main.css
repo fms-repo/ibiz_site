@@ -1053,7 +1053,7 @@ section,
 }
 
 .hero .hero-background[data-bg="0"] {
-  background-image: url('../img/hero-bg.jpg');
+  background-image: url('../img/hero-bg.png');
 }
 
 .hero .hero-background[data-bg="1"] {
