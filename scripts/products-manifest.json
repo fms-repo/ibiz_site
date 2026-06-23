@@ -1,0 +1,38 @@
+[
+  {
+    "slug": "product-erp",
+    "title": "ERP"
+  },
+  {
+    "slug": "product-qhse",
+    "title": "QHSE"
+  },
+  {
+    "slug": "product-hrms",
+    "title": "HRMS"
+  },
+  {
+    "slug": "product-business-intelligence",
+    "title": "Business Intelligence"
+  },
+  {
+    "slug": "product-cloud-infrastructure",
+    "title": "Cloud Infrastructure"
+  },
+  {
+    "slug": "product-ivms",
+    "title": "IVMS"
+  },
+  {
+    "slug": "product-agentic-agent",
+    "title": "Agentic Agent (AI)"
+  },
+  {
+    "slug": "product-e-invoicing",
+    "title": "e-Invoicing"
+  },
+  {
+    "slug": "product-mobile-application",
+    "title": "Mobile Application"
+  }
+]
