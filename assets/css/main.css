@@ -4611,6 +4611,11 @@ section,
   color: var(--accent-color);
 }
 
+.product-module-card .product-module-body {
+  flex: 1;
+  min-width: 0;
+}
+
 .product-module-card h4 {
   font-size: 1rem;
   font-weight: 700;
@@ -4623,4 +4628,482 @@ section,
   line-height: 1.55;
   color: color-mix(in srgb, var(--default-color), transparent 10%);
   margin: 0;
+}
+
+.product-module-card .product-module-go {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  margin-top: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  opacity: 0.75;
+  transition: all 0.3s ease;
+}
+
+.product-module-card-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.product-module-card-link:hover .product-module-go {
+  opacity: 1;
+  transform: translate(2px, -2px);
+  background: var(--aibizs-gradient);
+  color: var(--contrast-color);
+}
+
+.module-hero-media {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 75%);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+}
+
+.module-hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, color-mix(in srgb, var(--background-color), transparent 35%) 100%);
+  pointer-events: none;
+}
+
+.module-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.module-related-list ul li {
+  padding: 0 !important;
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 88%) !important;
+}
+
+.module-related-list .module-related-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  text-decoration: none;
+  color: var(--heading-color);
+  transition: color 0.25s ease;
+}
+
+.module-related-list .module-related-link i {
+  width: 34px !important;
+  height: 34px !important;
+  margin: 0 !important;
+  font-size: 15px !important;
+  color: var(--accent-color) !important;
+  background: color-mix(in srgb, var(--accent-color), transparent 88%) !important;
+}
+
+.module-related-list .module-related-link:hover {
+  color: var(--accent-color);
+}
+
+.module-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.module-back-link:hover {
+  color: var(--heading-color);
+}
+/*--------------------------------------------------------------
+# HRMS Product Module Pages (PeopleHR-style layout, AIBizs theme)
+--------------------------------------------------------------*/
+.hrms-product-page .hrms-product-hero {
+  padding-top: 140px;
+  padding-bottom: 60px;
+  background:
+    radial-gradient(ellipse 70% 50% at 85% 20%, color-mix(in srgb, var(--accent-color), transparent 82%), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 10% 80%, color-mix(in srgb, var(--primary-color), transparent 78%), transparent 65%),
+    var(--background-color);
+}
+
+.hrms-product-breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 28px;
+  font-size: 0.88rem;
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+}
+
+.hrms-product-breadcrumbs a {
+  color: color-mix(in srgb, var(--default-color), transparent 10%);
+  text-decoration: none;
+}
+
+.hrms-product-breadcrumbs a:hover {
+  color: var(--accent-color);
+}
+
+.hrms-product-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+}
+
+.hrms-product-eyebrow i {
+  font-size: 1.05rem;
+}
+
+.hrms-product-hero h1 {
+  font-size: clamp(2.1rem, 4vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--heading-color);
+  margin-bottom: 18px;
+}
+
+.hrms-product-lead {
+  font-size: 1.08rem;
+  line-height: 1.7;
+  color: color-mix(in srgb, var(--default-color), transparent 5%);
+  margin-bottom: 28px;
+  max-width: 36rem;
+}
+
+.hrms-product-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.hrms-product-cta-group .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: 8px;
+  color: var(--contrast-color) !important;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.hrms-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  border-radius: 8px;
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 55%);
+  color: var(--heading-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.hrms-btn-ghost:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 92%);
+}
+
+.hrms-product-hero-media {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 70%);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  background: var(--surface-color);
+}
+
+.hrms-product-hero-media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, color-mix(in srgb, var(--accent-color), transparent 88%), transparent 45%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hrms-product-hero-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 280px;
+  object-fit: cover;
+}
+
+.hrms-product-trust {
+  padding: 22px 0;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  background: color-mix(in srgb, var(--surface-color), transparent 40%);
+}
+
+.hrms-product-trust p {
+  margin: 0;
+  text-align: center;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.hrms-product-solutions .hrms-solution-row {
+  margin-bottom: 72px;
+}
+
+.hrms-product-solutions .hrms-solution-row:last-child {
+  margin-bottom: 0;
+}
+
+.hrms-product-media {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 78%);
+  background: var(--surface-color);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+}
+
+.hrms-product-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  object-fit: cover;
+}
+
+.hrms-product-copy h2 {
+  font-size: clamp(1.55rem, 2.4vw, 2rem);
+  font-weight: 750;
+  color: var(--heading-color);
+  margin-bottom: 14px;
+}
+
+.hrms-product-copy > p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: color-mix(in srgb, var(--default-color), transparent 8%);
+  margin-bottom: 20px;
+}
+
+.hrms-check-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.hrms-check-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: color-mix(in srgb, var(--default-color), transparent 5%);
+}
+
+.hrms-check-list li i {
+  color: var(--accent-color);
+  font-size: 1.1rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.hrms-capability-item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 18px 16px;
+  border-radius: 12px;
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 82%);
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.hrms-capability-item:hover {
+  border-color: color-mix(in srgb, var(--accent-color), transparent 50%);
+  transform: translateY(-2px);
+}
+
+.hrms-capability-item i {
+  font-size: 1.35rem;
+  color: var(--accent-color);
+}
+
+.hrms-capability-item span {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--heading-color);
+  line-height: 1.35;
+}
+
+.hrms-process-card {
+  height: 100%;
+  padding: 24px 20px;
+  border-radius: 14px;
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hrms-process-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--aibizs-gradient);
+}
+
+.hrms-process-num {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--accent-color);
+}
+
+.hrms-process-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 8px;
+}
+
+.hrms-process-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: color-mix(in srgb, var(--default-color), transparent 10%);
+}
+
+.hrms-faq-accordion .accordion-item {
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 82%);
+  border-radius: 12px !important;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.hrms-faq-accordion .accordion-button {
+  background: transparent;
+  color: var(--heading-color);
+  font-weight: 650;
+  box-shadow: none;
+  padding: 18px 20px;
+}
+
+.hrms-faq-accordion .accordion-button:not(.collapsed) {
+  background: color-mix(in srgb, var(--accent-color), transparent 92%);
+  color: var(--heading-color);
+  box-shadow: none;
+}
+
+.hrms-faq-accordion .accordion-button::after {
+  filter: invert(1) brightness(1.4);
+}
+
+.hrms-faq-accordion .accordion-body {
+  color: color-mix(in srgb, var(--default-color), transparent 8%);
+  line-height: 1.65;
+  padding: 0 20px 18px;
+}
+
+.hrms-cta-panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 36px 32px;
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--primary-color), transparent 35%), color-mix(in srgb, var(--accent-color), transparent 55%)),
+    var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 65%);
+}
+
+.hrms-cta-panel h2 {
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-weight: 750;
+  color: var(--heading-color);
+  margin-bottom: 8px;
+}
+
+.hrms-cta-panel p {
+  margin: 0;
+  max-width: 34rem;
+  color: color-mix(in srgb, var(--default-color), transparent 5%);
+}
+
+.hrms-related-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  padding: 18px 12px;
+  height: 100%;
+  border-radius: 12px;
+  text-decoration: none;
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 82%);
+  color: var(--heading-color);
+  transition: all 0.25s ease;
+}
+
+.hrms-related-card i {
+  font-size: 1.4rem;
+  color: var(--accent-color);
+}
+
+.hrms-related-card span {
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.hrms-related-card:hover {
+  border-color: color-mix(in srgb, var(--accent-color), transparent 45%);
+  transform: translateY(-3px);
+  color: var(--accent-color);
+}
+
+@media (max-width: 991px) {
+  .hrms-product-page .hrms-product-hero {
+    padding-top: 120px;
+  }
+
+  .hrms-cta-panel {
+    padding: 28px 22px;
+  }
+}
+
+@media (max-width: 575px) {
+  .hrms-product-hero-media img,
+  .hrms-product-media img {
+    min-height: 200px;
+  }
 }

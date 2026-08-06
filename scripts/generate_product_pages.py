@@ -106,8 +106,8 @@ PRODUCTS = [
         "overview_title": "People Operations, Simplified",
         "overview_p1": "Manage hiring, onboarding, compensation, attendance, and offboarding in one HR platform. HR teams gain dashboards for workforce analytics while employees access self-service tools for leave, documents, and personal records.",
         "overview_p2": "Integrated with ERP and payroll compliance requirements, with AI-assisted workflows and multi-company support for growing organizations.",
-        "image": "assets/img/finance/img3.png",
-        "image_alt": "HR management dashboard for Oman workforce",
+        "image": "assets/img/hrimage/payroll-hero.png",
+        "image_alt": "AIBizs HRMS dashboard for Oman workforce",
         "sidebar_title": "Transform Your HR Operations",
         "sidebar_text": "Discover how AIBizs HRMS can automate payroll, streamline recruitment, and empower your workforce.",
         "sidebar_cta": "Request Consultation",
@@ -119,13 +119,13 @@ PRODUCTS = [
             ("bi-briefcase", "Recruitment", "End-to-end hiring workflows"),
         ],
         "modules": [
-            ("bi-wallet2", "Payroll", "Automated payroll processing with tax calculations and compliance"),
-            ("bi-person-badge", "Employee Self Service", "Employee portal for accessing personal information and HR services"),
-            ("bi-calendar-check", "Leave Management", "Manage employee leave requests, approvals, and balance tracking"),
-            ("bi-person-plus", "Employee Onboarding", "Streamline new employee onboarding process and documentation"),
-            ("bi-person-dash", "Employee Offboarding", "Manage employee exit process, asset return, and final settlements"),
-            ("bi-graph-up", "Appraisal", "Performance evaluation, goal setting, and career development tracking"),
-            ("bi-briefcase", "Recruitment", "Manage job postings, applications, interviews, and hiring workflow"),
+            ("bi-wallet2", "Payroll", "Automated payroll processing with tax calculations and compliance", "hrms-payroll.html"),
+            ("bi-person-badge", "Employee Self Service", "Employee portal for accessing personal information and HR services", "hrms-employee-self-service.html"),
+            ("bi-calendar-check", "Leave Management", "Manage employee leave requests, approvals, and balance tracking", "hrms-leave-management.html"),
+            ("bi-person-plus", "Employee Onboarding", "Streamline new employee onboarding process and documentation", "hrms-employee-onboarding.html"),
+            ("bi-person-dash", "Employee Offboarding", "Manage employee exit process, asset return, and final settlements", "hrms-employee-offboarding.html"),
+            ("bi-graph-up", "Appraisal", "Performance evaluation, goal setting, and career development tracking", "hrms-appraisal.html"),
+            ("bi-briefcase", "Recruitment", "Manage job postings, applications, interviews, and hiring workflow", "hrms-recruitment.html"),
         ],
         "platform": [
             ("bi-robot", "AI Integration", "All modules come with AI integration capabilities"),
@@ -412,16 +412,37 @@ def esc(text: str) -> str:
 
 def module_cards(modules):
     rows = []
-    for icon, title, desc in modules:
-        rows.append(
-            f"""          <div class="col-md-6">
-            <div class="product-module-card">
-              <div class="product-module-icon"><i class="bi {esc(icon)}"></i></div>
-              <div>
+    for item in modules:
+        if len(item) == 4:
+            icon, title, desc, href = item
+        else:
+            icon, title, desc = item
+            href = None
+
+        go = (
+            '<span class="product-module-go" aria-hidden="true"><i class="bi bi-arrow-up-right"></i></span>'
+            if href
+            else ""
+        )
+        body = f"""              <div class="product-module-icon"><i class="bi {esc(icon)}"></i></div>
+              <div class="product-module-body">
                 <h4>{esc(title)}</h4>
                 <p>{esc(desc)}</p>
               </div>
-            </div>
+              {go}"""
+
+        if href:
+            card = f"""            <a href="{esc(href)}" class="product-module-card product-module-card-link" aria-label="View {esc(title)} module details">
+{body}
+            </a>"""
+        else:
+            card = f"""            <div class="product-module-card">
+{body}
+            </div>"""
+
+        rows.append(
+            f"""          <div class="col-md-6">
+{card}
           </div>"""
         )
     return "\n".join(rows)
