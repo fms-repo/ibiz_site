@@ -12,10 +12,10 @@ MODULES = [
     {
         "slug": "hrms-payroll",
         "title": "Payroll",
-        "eyebrow": "AIBizs HRMS",
+        "eyebrow": "AIVizion HRMS",
         "hero_title": "Flexible Payroll Solutions",
         "hero_text": "Automate salary processing, statutory deductions, payslips, and bank disbursement — built for Omani and GCC organizations that need accuracy, control, and audit-ready payroll every cycle.",
-        "description": "AIBizs HRMS Payroll automates salary calculations, allowances, deductions, social contributions, payslip generation, and bank disbursement for Omani and GCC workforces.",
+        "description": "AIVizion HRMS Payroll automates salary calculations, allowances, deductions, social contributions, payslip generation, and bank disbursement for Omani and GCC workforces.",
         "icon": "bi-wallet2",
         "image": "assets/img/hrimage/payroll-hero.png",
         "image_alt": "AIBizs payroll cycle dashboard",
@@ -35,7 +35,7 @@ MODULES = [
             },
             {
                 "title": "Integrated HR & Payroll",
-                "text": "Say goodbye to disconnected systems. Payroll pulls leave, attendance, loans, and employee changes directly from AIBizs HRMS — one source of truth for people and pay.",
+                "text": "Say goodbye to disconnected systems. Payroll pulls leave, attendance, loans, and employee changes directly from AIVizion HRMS — one source of truth for people and pay.",
                 "bullets": [
                     "Eliminate duplicate data entry between HR and payroll",
                     "Leave and overtime impact reflected automatically",
@@ -76,7 +76,7 @@ MODULES = [
             ("bi-clock-history", "Retro & adjustments"),
         ],
         "faqs": [
-            ("Who is AIBizs Payroll for?", "Organizations in Oman and the GCC that need reliable in-house payroll — from growing SMBs to multi-entity enterprises — with clear HR and finance collaboration."),
+            ("Who is AIVizion Payroll for?", "Organizations in Oman and the GCC that need reliable in-house payroll — from growing SMBs to multi-entity enterprises — with clear HR and finance collaboration."),
             ("Does it integrate with other HRMS modules?", "Yes. Payroll connects with Leave, Attendance, ESS, Onboarding, and Offboarding so pay reflects real workforce events without re-keying data."),
             ("Can we support multiple companies?", "Yes. Run separate or consolidated cycles across legal entities and branches with shared or company-specific pay rules."),
             ("How do employees access payslips?", "Through Employee Self Service — secure download of current and historical payslips with role-based privacy controls."),
@@ -85,10 +85,10 @@ MODULES = [
     {
         "slug": "hrms-employee-self-service",
         "title": "Employee Self Service",
-        "eyebrow": "AIBizs HRMS",
+        "eyebrow": "AIVizion HRMS",
         "hero_title": "Self-Service HR for Every Employee",
         "hero_text": "Give your workforce a modern portal to manage profiles, payslips, leave, and documents — cutting HR admin while improving everyday employee experience.",
-        "description": "AIBizs Employee Self Service gives staff a secure portal for profiles, payslips, leave balances, documents, and requests.",
+        "description": "AIVizion Employee Self Service gives staff a secure portal for profiles, payslips, leave balances, documents, and requests.",
         "icon": "bi-person-badge",
         "image": "assets/img/hrimage/ess-hero.png",
         "image_alt": "Employee self-service workplace dashboard",
@@ -158,10 +158,10 @@ MODULES = [
     {
         "slug": "hrms-leave-management",
         "title": "Leave Management",
-        "eyebrow": "AIBizs HRMS",
+        "eyebrow": "AIVizion HRMS",
         "hero_title": "Absence Management Made Simple",
         "hero_text": "Policy-driven leave types, accruals, approvals, and team calendars — so employees know their balances and managers plan coverage with confidence.",
-        "description": "AIBizs Leave Management handles annual, sick, and special leave with accruals, multi-level approvals, calendars, and payroll sync.",
+        "description": "AIVizion Leave Management handles annual, sick, and special leave with accruals, multi-level approvals, calendars, and payroll sync.",
         "icon": "bi-calendar-check",
         "image": "assets/img/hrimage/leave-hero.png",
         "image_alt": "Leave management absence hub dashboard",
@@ -231,10 +231,10 @@ MODULES = [
     {
         "slug": "hrms-employee-onboarding",
         "title": "Employee Onboarding",
-        "eyebrow": "AIBizs HRMS",
+        "eyebrow": "AIVizion HRMS",
         "hero_title": "Onboarding That Sets New Hires Up for Success",
         "hero_text": "Replace chaotic first weeks with guided checklists, document collection, access provisioning, and probation tracking — from offer accepted to productive.",
-        "description": "AIBizs Onboarding standardizes joining with checklists, document collection, IT/HR tasks, and probation tracking.",
+        "description": "AIVizion Onboarding standardizes joining with checklists, document collection, IT/HR tasks, and probation tracking.",
         "icon": "bi-person-plus",
         "image": "assets/img/hrimage/onboarding-hero.png",
         "image_alt": "Employee onboarding journey dashboard",
@@ -304,10 +304,10 @@ MODULES = [
     {
         "slug": "hrms-employee-offboarding",
         "title": "Employee Offboarding",
-        "eyebrow": "AIBizs HRMS",
+        "eyebrow": "AIVizion HRMS",
         "hero_title": "Secure, Complete Employee Exits",
         "hero_text": "Manage resignations and terminations with clearance workflows, asset return, access revocation, and accurate final settlement — every exit audit-ready.",
-        "description": "AIBizs Offboarding manages exit clearances, asset return, access revocation, knowledge handover, and final settlements.",
+        "description": "AIVizion Offboarding manages exit clearances, asset return, access revocation, knowledge handover, and final settlements.",
         "icon": "bi-person-dash",
         "image": "assets/img/hrimage/offboarding-hero.png",
         "image_alt": "Employee offboarding exit control dashboard",
@@ -377,10 +377,10 @@ MODULES = [
     {
         "slug": "hrms-appraisal",
         "title": "Appraisal",
-        "eyebrow": "AIBizs HRMS",
+        "eyebrow": "AIVizion HRMS",
         "hero_title": "Performance Reviews That Drive Growth",
         "hero_text": "Run fair, structured appraisal cycles with goals, feedback, calibration, and development plans — turning reviews into continuous performance management.",
-        "description": "AIBizs Appraisal supports goal setting, multi-rater reviews, calibration, and development plans linked to workforce growth.",
+        "description": "AIVizion Appraisal supports goal setting, multi-rater reviews, calibration, and development plans linked to workforce growth.",
         "icon": "bi-graph-up",
         "image": "assets/img/hrimage/appraisal-hero.png",
         "image_alt": "Performance appraisal cycle dashboard",
@@ -450,10 +450,10 @@ MODULES = [
     {
         "slug": "hrms-recruitment",
         "title": "Recruitment",
-        "eyebrow": "AIBizs HRMS",
+        "eyebrow": "AIVizion HRMS",
         "hero_title": "Hire Faster with a Clear Talent Pipeline",
         "hero_text": "Manage requisitions, job postings, interviews, scorecards, and offers in one place — then hand accepted candidates straight into onboarding.",
-        "description": "AIBizs Recruitment manages requisitions, pipelines, interviews, evaluations, and offers with seamless onboarding handoff.",
+        "description": "AIVizion Recruitment manages requisitions, pipelines, interviews, evaluations, and offers with seamless onboarding handoff.",
         "icon": "bi-briefcase",
         "image": "assets/img/hrimage/recruitment-hero.png",
         "image_alt": "Recruitment talent pipeline dashboard",
@@ -633,7 +633,7 @@ def render_module(m):
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>{esc(m['title'])} | AIBizs HRMS</title>
+  <title>{esc(m['title'])} | AIVizion HRMS</title>
   <meta name="description" content="{esc(m['description'])}">
   <meta name="author" content="AIBizs">
   <meta name="robots" content="index, follow">
@@ -758,7 +758,7 @@ def render_module(m):
         <div class="hrms-cta-panel">
           <div>
             <h2>Ready to see {esc(m['title'])} in action?</h2>
-            <p>Speak with our team about configuring AIBizs HRMS for your organization in Oman and the GCC.</p>
+            <p>Speak with our team about configuring AIVizion HRMS for your organization in Oman and the GCC.</p>
           </div>
           <div class="hrms-product-cta-group">
             <a href="index.html#contact" class="btn-primary">Book a Discovery Call</a>

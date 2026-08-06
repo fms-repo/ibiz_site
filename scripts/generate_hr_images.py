@@ -64,7 +64,7 @@ def chrome(draw, title: str, subtitle: str):
     # Sidebar
     rr(draw, (24, 24, 250, H - 24), 22, fill=(16, 28, 34))
     draw.rectangle((210, 24, 250, H - 24), fill=(16, 28, 34))
-    text(draw, (48, 48), "AIBizs HRMS", F_H2, ACCENT)
+    text(draw, (48, 48), "AIVizion HRMS", F_H2, ACCENT)
     text(draw, (48, 74), title, F_SMALL, MUTED)
 
     nav = [

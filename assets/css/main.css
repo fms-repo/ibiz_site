@@ -5107,3 +5107,493 @@ section,
     min-height: 200px;
   }
 }
+
+/*--------------------------------------------------------------
+# HRMS Brochure (shareable presentation page)
+--------------------------------------------------------------*/
+.hrms-brochure-page {
+  --brochure-topbar-h: 72px;
+}
+
+.hrms-brochure-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(14px);
+  background: color-mix(in srgb, var(--background-color), transparent 18%);
+  border-bottom: 1px solid color-mix(in srgb, var(--accent-color), transparent 78%);
+}
+
+.hrms-brochure-topbar-inner {
+  min-height: var(--brochure-topbar-h);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.hrms-brochure-brand {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  line-height: 1.15;
+  flex-shrink: 0;
+}
+
+.hrms-brochure-brand .sitename {
+  color: var(--heading-color);
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.hrms-brochure-brand small {
+  color: var(--accent-color);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.hrms-brochure-nav {
+  display: none;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.hrms-brochure-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.hrms-brochure-nav-link {
+  white-space: nowrap;
+  padding: 8px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: color-mix(in srgb, var(--default-color), transparent 15%);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.hrms-brochure-nav-link:hover,
+.hrms-brochure-nav-link.is-active {
+  color: var(--heading-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 88%);
+}
+
+.hrms-brochure-top-actions {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.hrms-brochure-share,
+.hrms-brochure-menu-toggle {
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 60%);
+  background: transparent;
+  color: var(--heading-color);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.hrms-brochure-share:hover,
+.hrms-brochure-menu-toggle:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.hrms-brochure-contact-btn {
+  padding: 8px 14px !important;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: var(--contrast-color) !important;
+}
+
+.hrms-brochure-mobile-nav {
+  display: grid;
+  gap: 4px;
+  padding: 8px 16px 14px;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+}
+
+.hrms-brochure-mobile-nav .hrms-brochure-nav-link {
+  padding: 10px 12px;
+}
+
+.hrms-brochure-cover {
+  padding: 48px 0 56px;
+  background:
+    radial-gradient(ellipse 60% 45% at 90% 10%, color-mix(in srgb, var(--accent-color), transparent 80%), transparent 70%),
+    radial-gradient(ellipse 45% 40% at 0% 90%, color-mix(in srgb, var(--primary-color), transparent 75%), transparent 65%),
+    var(--background-color);
+}
+
+.hrms-brochure-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  color: var(--accent-color);
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.hrms-brochure-cover h1 {
+  font-size: clamp(2.2rem, 4.4vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.12;
+  color: var(--heading-color);
+  margin-bottom: 18px;
+}
+
+.hrms-brochure-lead {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: color-mix(in srgb, var(--default-color), transparent 5%);
+  margin-bottom: 20px;
+}
+
+.hrms-brochure-cover-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  margin-bottom: 26px;
+}
+
+.hrms-brochure-cover-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.88rem;
+  color: color-mix(in srgb, var(--default-color), transparent 10%);
+}
+
+.hrms-brochure-cover-meta i {
+  color: var(--accent-color);
+}
+
+.hrms-brochure-cover-visual {
+  display: grid;
+  gap: 14px;
+}
+
+.hrms-brochure-cover-visual > img,
+.hrms-brochure-cover-stack img,
+.hrms-brochure-hero-shot img,
+.hrms-brochure-solution-media img,
+.hrms-brochure-overview-grid img {
+  width: 100%;
+  display: block;
+  border-radius: 14px;
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 72%);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+  background: var(--surface-color);
+}
+
+.hrms-brochure-cover-stack {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.hrms-brochure-jump {
+  padding: 18px 0;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  background: color-mix(in srgb, var(--surface-color), transparent 35%);
+}
+
+.hrms-brochure-jump > .container > p {
+  margin: 0 0 12px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+}
+
+.hrms-brochure-pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hrms-brochure-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--heading-color);
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 78%);
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.hrms-brochure-pill i {
+  color: var(--accent-color);
+}
+
+.hrms-brochure-pill:hover,
+.hrms-brochure-pill.is-active {
+  border-color: color-mix(in srgb, var(--accent-color), transparent 40%);
+  transform: translateY(-1px);
+  color: var(--accent-color);
+}
+
+.hrms-brochure-overview h2,
+.hrms-brochure-module h2 {
+  font-size: clamp(1.7rem, 3vw, 2.35rem);
+  font-weight: 800;
+  color: var(--heading-color);
+  margin-bottom: 14px;
+}
+
+.hrms-brochure-overview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.hrms-brochure-trust {
+  font-weight: 650;
+  color: var(--heading-color);
+  margin-bottom: 14px;
+}
+
+.hrms-brochure-inline-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent-color);
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.hrms-brochure-inline-link:hover {
+  color: var(--heading-color);
+}
+
+.hrms-brochure-module-head {
+  margin-bottom: 28px;
+}
+
+.hrms-brochure-hero-shot {
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.hrms-brochure-solution-grid {
+  margin-bottom: 28px;
+}
+
+.hrms-brochure-solution-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.hrms-brochure-solution-media img {
+  border-radius: 0;
+  border: 0;
+  box-shadow: none;
+  min-height: 180px;
+  object-fit: cover;
+}
+
+.hrms-brochure-solution-body {
+  padding: 18px 16px 20px;
+}
+
+.hrms-brochure-solution-body h4 {
+  font-size: 1.05rem;
+  font-weight: 740;
+  color: var(--heading-color);
+  margin-bottom: 8px;
+}
+
+.hrms-brochure-solution-body > p {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: color-mix(in srgb, var(--default-color), transparent 8%);
+  margin-bottom: 12px;
+}
+
+.hrms-brochure-solution-body ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.hrms-brochure-solution-body li {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  font-size: 0.84rem;
+  line-height: 1.45;
+  color: color-mix(in srgb, var(--default-color), transparent 5%);
+}
+
+.hrms-brochure-solution-body li i {
+  color: var(--accent-color);
+  margin-top: 1px;
+  flex-shrink: 0;
+}
+
+.hrms-brochure-process {
+  margin-bottom: 22px;
+}
+
+.hrms-brochure-process h3 {
+  font-size: 1.15rem;
+  font-weight: 740;
+  color: var(--heading-color);
+  margin-bottom: 14px;
+}
+
+.hrms-brochure-step {
+  height: 100%;
+  padding: 16px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--surface-color), transparent 10%);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 82%);
+}
+
+.hrms-brochure-step span {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: var(--accent-color);
+  font-size: 0.8rem;
+  font-weight: 750;
+  letter-spacing: 0.05em;
+}
+
+.hrms-brochure-step h5 {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 6px;
+}
+
+.hrms-brochure-step p {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: color-mix(in srgb, var(--default-color), transparent 10%);
+}
+
+.hrms-brochure-caps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hrms-brochure-caps li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 82%);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.hrms-brochure-caps i {
+  color: var(--accent-color);
+}
+
+.hrms-brochure-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%) translateY(12px);
+  z-index: 1100;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: var(--aibizs-gradient);
+  color: var(--contrast-color);
+  font-size: 0.9rem;
+  font-weight: 650;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.hrms-brochure-toast.is-visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (min-width: 1200px) {
+  .hrms-brochure-nav,
+  .hrms-brochure-top-actions {
+    display: flex;
+  }
+
+  .hrms-brochure-menu-toggle {
+    display: none;
+  }
+}
+
+@media (max-width: 1199px) {
+  .hrms-brochure-top-actions {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .hrms-brochure-cover {
+    padding-top: 28px;
+  }
+
+  .hrms-brochure-overview-grid,
+  .hrms-brochure-cover-stack {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media print {
+  .hrms-brochure-topbar,
+  .hrms-brochure-toast,
+  #scroll-top,
+  #preloader,
+  .footer {
+    display: none !important;
+  }
+
+  .hrms-brochure-module,
+  .hrms-brochure-overview,
+  .hrms-brochure-platform {
+    break-inside: avoid;
+  }
+}
