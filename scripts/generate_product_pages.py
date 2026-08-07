@@ -126,6 +126,7 @@ PRODUCTS = [
             ("bi-person-dash", "Employee Offboarding", "Manage employee exit process, asset return, and final settlements", "hrms-employee-offboarding.html"),
             ("bi-graph-up", "Appraisal", "Performance evaluation, goal setting, and career development tracking", "hrms-appraisal.html"),
             ("bi-briefcase", "Recruitment", "Manage job postings, applications, interviews, and hiring workflow", "hrms-recruitment.html"),
+            ("bi-phone", "Mobile Application", "iOS and Android app with self-service, geo-fenced clocking, approvals, and AI chat", "hrms-mobile-application.html"),
         ],
         "platform": [
             ("bi-robot", "AI Integration", "All modules come with AI integration capabilities"),

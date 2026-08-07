@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Generate AIBizs-themed HRMS dashboard mockup images."""
+"""Generate AIVizion-themed HRMS dashboard mockup images.
+
+WARNING: Running this script overwrites files in assets/img/hrimage/.
+Only use when intentionally regenerating mockups from scratch.
+Prefer keeping curated/high-quality images already in that folder.
+"""
 
 from __future__ import annotations
 

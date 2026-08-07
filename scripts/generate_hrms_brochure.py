@@ -346,6 +346,7 @@ def render():
             <li><a href="#overview">Overview</a></li>
             <li><a href="#hrms-payroll">Payroll</a></li>
             <li><a href="#hrms-recruitment">Recruitment</a></li>
+            <li><a href="#hrms-mobile-application">Mobile Application</a></li>
             <li><a href="product-hrms.html">HRMS product page</a></li>
           </ul>
         </div>
